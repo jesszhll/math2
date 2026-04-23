@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "ZCOOL KuaiLe", cursive, ui-sans-serif, system-ui;
+}
+
+@layer base {
+  body {
+    @apply overflow-hidden select-none;
+    background-color: #f0fdf4;
+  }
+}
+
+.sleek-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 30%, #e0f2fe 0%, transparent 40%), 
+              radial-gradient(circle at 80% 70%, #fdf2f8 0%, transparent 40%), 
+              radial-gradient(circle at 50% 50%, #f0fdf4 0%, #dcfce7 100%);
+}
+
+.sleek-button {
+  @apply h-16 w-full bg-orange-400 hover:bg-orange-500 text-white font-bold text-2xl rounded-2xl shadow-[0_6px_0_0_#c2410c] active:shadow-none active:translate-y-[6px] transition-all;
+}
+
+.dino-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.shake-animation {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
